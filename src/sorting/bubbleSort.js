@@ -1,6 +1,6 @@
-function bubbleSort(vector) {
-    swapTotal = 0;
-    comparisonTotal = 0;
+export function bubbleSort(vector) {
+    let swapTotal = 0;
+    let comparisonTotal = 0;
     for (let j = 0; j < vector.length - 1; j++) {
         for (let i = 0; i < vector.length - 1; i++) {
             comparisonTotal++
@@ -13,8 +13,39 @@ function bubbleSort(vector) {
     console.log(`swapTotal: ${swapTotal}, comparisons: ${comparisonTotal}`)
 }
 
-numbers = [13, 8, 7, 6, 2, 1]
+export function bubbleSortRevenge(vector) {
+    let swapTotal = 0;
+    let comparisonTotal = 0;
 
-bubbleSort(numbers)
+    for (let last = vector.length - 1; last > 0; last--) {
+        for (let i = 0; i < last; i++) {
+            comparisonTotal++
+            if (vector[i] > vector[i + 1]) {
+                [vector[i], vector[i + 1]] = [vector[i + 1], vector[i]]
+                swapTotal++
+            }
+        }
+    }    
+    console.log(`swapTotal: ${swapTotal}, comparisons: ${comparisonTotal}`)
 
-console.log(numbers)
+}
+
+export function optimunBubbleSort(vector) {
+    let swapTotal = 0;
+    let comparisonTotal = 0;
+
+    for (let last = vector.length - 1; last > 0; last--) {
+        let swaps = 0
+        for (let i = 0; i < last; i++) {
+            comparisonTotal++
+            if (vector[i] > vector[i + 1]) {
+                [vector[i], vector[i + 1]] = [vector[i + 1], vector[i]]
+                swapTotal++
+                swaps++
+            }
+        }
+        if (swaps == 0) break
+    }    
+    console.log(`swapTotal: ${swapTotal}, comparisons: ${comparisonTotal}`)
+
+}
