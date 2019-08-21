@@ -1,12 +1,10 @@
-import { bubbleSort, bubbleSortRevenge, optimunBubbleSort } from './sorting/bubbleSort'
+import { optimunBubbleSort } from './sorting/bubbleSort'
+import { selectionSort } from './sorting/selectionSort'
 
 let numbers = [13, 8, 7, 6, 2, 1], numbers2 = [13, 8, 7, 6, 2, 1]
-let ordered = [1, 2, 7, 6, 8, 13]
 
-optimunBubbleSort(numbers)
-bubbleSortRevenge(numbers2)
-optimunBubbleSort(ordered)
-
+selectionSort(numbers.reverse())
 console.log(numbers)
+
+optimunBubbleSort(numbers2.reverse())
 console.log(numbers2)
-console.log(ordered)
