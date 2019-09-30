@@ -12,7 +12,7 @@ function merge(vector, start, middle, end) {
     let sorted = []
     let left = start
     let right = middle + 1
-    let actual = start
+    let actual = 0
     let endLeft = false, endRight = false
 
     while (!endLeft || !endRight) {
@@ -22,7 +22,6 @@ function merge(vector, start, middle, end) {
             } else {
                 sorted[actual++] = vector[right++]
             }
-
         } else if (endLeft) {
             sorted[actual++] = vector[right++]
         } else {
