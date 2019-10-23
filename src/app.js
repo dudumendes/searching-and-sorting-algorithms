@@ -1,7 +1,7 @@
-import { mergeSort } from './sorting/mergeSort'
+import { heapSort } from './sorting/heapSort'
 
-let numbers = [1, 4, 1, 2, 7, 5, 2, 3], numbers2 = [13, 8, 7, 6, 2, 1], numbers3 = [13, 8, 7, 6, 2, 1]
+let numbers = [2, 8, 5, 3, 9, 1]
 
 console.log(numbers)
-mergeSort(numbers, 0, 7)
+heapSort(numbers)
 console.log(numbers)
