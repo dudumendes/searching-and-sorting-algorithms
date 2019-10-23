@@ -10,13 +10,6 @@ export function heapSort(vector) {
 }
 
 export function heapSortMin(vector) {
-    for (let i = Math.floor(vector.length/2) - 1; i >= 0; i--) {
-        minHeapfy(vector, i, vector.length);
-    }
-
-    for (let start = 1; start < vector.length; start++) {
-        minHeapfy(vector, start, vector.length)
-    }
 }
 
 function maxHeapfy(vector, start, end) {
