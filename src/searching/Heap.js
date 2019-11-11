@@ -26,10 +26,40 @@ export default class Heap {
     }
 
     remove() {
-
+        let maxElement = null
+        if (this._elements.length > 0) {
+            [this._elements[0], this._elements[this._elements.length - 1]]=
+            [this._elements[this._elements.length - 1], this._elements[0]]
+            maxElement = this._elements.pop()
+            this.demote(0)
+        }
+        return maxElement
     }
 
-    demote(element) {
+    demote(index) {
+        let left = 2 * index + 1
+        let right = left + 1
+
+        let major = left
+
+        if (right <= this._elements.length - 1) {
+            if (this._elements[right].id > this._elements[left].id) {
+                major = right
+            }
+
+            if (this._elements[major].id > this._elements[index].id) {
+                [this._elements[major], this._elements[index] ] =
+                [this._elements[index], this._elements[major] ]
+                this.demote(major)
+            }
+
+        } else if (left <= this._elements.length - 1) {
+            if (this._elements[major].id > this._elements[index].id) {
+                [this._elements[major], this._elements[index] ] =
+                [this._elements[index], this._elements[major] ]
+                this.demote(major)
+            }
+        }
 
     }
 
